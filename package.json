@@ -1,0 +1,58 @@
+{
+  "name": "mini-app",
+  "version": "0.0.0",
+  "scripts": {
+    "start": "cross-env PORT=10888 HTTPS=true react-scripts start",
+    "build": "react-scripts build",
+    "predeploy": "npm run build",
+    "deploy": "vk-miniapps-deploy"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "keywords": [],
+  "license": "MIT",
+  "dependencies": {
+    "@2gis/mapgl": "^1.34.0",
+    "@pbe/react-yandex-maps": "^1.2.2",
+    "@vkontakte/icons": "^2.18.0",
+    "@vkontakte/vk-bridge": "^2.7.2",
+    "@vkontakte/vkjs": "0.20.0",
+    "@vkontakte/vkui": "^4.42.2",
+    "2gis-maps": "^3.7.3",
+    "babel-eslint": "^10.1.0",
+    "eruda": "^2.4.1",
+    "eruda-code": "^2.0.0",
+    "eruda-dom": "^2.0.0",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-geolocated": "^4.0.3",
+    "sass": "^1.58.3",
+    "vk-deploy-app": "^0.0.0"
+  },
+  "devDependencies": {
+    "@vkontakte/vk-miniapps-deploy": "^0.0.26",
+    "cross-env": "^7.0.3",
+    "react-hot-loader": "^4.13.0",
+    "react-scripts": "^5.0.1"
+  },
+  "resolutions": {
+    "react-scripts/webpack-dev-server/yargs/yargs-parser": ">=18.1.2"
+  },
+  "overrides": {
+    "es5-ext@^0.10.50": "0.10.53"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
