@@ -4,21 +4,23 @@ import { Panel, PanelHeader, Header, Button, Group, Cell, Div, Image } from '@vk
 
 const Home = ({ id, go}) => (
 	<Panel style={{width:"100%"}} id={id}>
-		<PanelHeader>НайдиШавуху</PanelHeader>		
-		<Group className='group' >
+		<PanelHeader>НайдиШавуху</PanelHeader>	
 		
-			<Div className='div2'/>
-			<Header style={{paddingLeft:"40px"}} mode="primary">Включите GPS или выберите адрес
-</Header>
+		<Group >		
 			<Div className='div1'>
-				<Button className='btn' stretched size="l" mode="secondary" onClick={()=>{go("gps")}} style={{ marginBottom: 16 }}>
-					Gps
-				</Button>
-				<Button className='btn' stretched size="l" mode="secondary" onClick={() => {go("addr")}}>
-					Ввести местоположение
-				</Button>
-			</Div>
+				<Div className='div2'/>
+				<Header mode="primary">Включите GPS или выберите адрес</Header>
+				<Div >
+					<Button className='btn' stretched size="l" mode="secondary" onClick={()=>{go("gps")}} style={{ marginBottom: 16 }}>
+						Gps
+					</Button>
+					<Button className='btn' stretched size="l" mode="secondary" onClick={() => {go("addr")}}>
+						Ввести местоположение
+					</Button>
+				</Div>
+			</Div>	
 		</Group>
+		
 	</Panel>
 );
 

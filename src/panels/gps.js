@@ -46,8 +46,8 @@ const Gps = ({ id, go}) => {
             left={<PanelHeaderBack onClick={() => {go("home")}} />}>
             НайдиШавуху
         </PanelHeader>
-		<Group >
-			<Div className="div1" style={{display:"flex",flexDirection:"column",alignItems:"center"}}>
+		<Group >           
+			<Div className="div1">
                 <Title level='3'>Вы находитесь: {userData.name} {userData.description}</Title>
                 <Button className="btn" size="l" mode="secondary" onClick={() => {
                     go("byAddres");                    
