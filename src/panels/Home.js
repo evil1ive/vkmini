@@ -1,18 +1,20 @@
 import React from 'react';
-
-import { Panel, PanelHeader, Header, Button, Group, Cell, Div, Avatar } from '@vkontakte/vkui';
+import Gps from '../img/gps.svg';
+import { Panel, PanelHeader, Header, Button, Group, Cell, Div, Image } from '@vkontakte/vkui';
 
 const Home = ({ id, go}) => (
-	<Panel id={id}>
-		<PanelHeader>НайдиШавуху</PanelHeader>
+	<Panel style={{width:"100%"}} id={id}>
+		<PanelHeader>НайдиШавуху</PanelHeader>		
+		<Group className='group' >
 		
-
-		<Group header={<Header mode="secondary">Определение местоположения</Header>}>
-			<Div>
-				<Button stretched size="l" mode="secondary" onClick={()=>{go("gps")}} style={{ marginBottom: 16 }}>
-					Определить местоположение через gps
+			<Div className='div2'/>
+			<Header style={{paddingLeft:"40px"}} mode="primary">Включите GPS или выберите адрес
+</Header>
+			<Div className='div1'>
+				<Button className='btn' stretched size="l" mode="secondary" onClick={()=>{go("gps")}} style={{ marginBottom: 16 }}>
+					Gps
 				</Button>
-				<Button stretched size="l" mode="secondary" onClick={() => {go("addr")}}>
+				<Button className='btn' stretched size="l" mode="secondary" onClick={() => {go("addr")}}>
 					Ввести местоположение
 				</Button>
 			</Div>

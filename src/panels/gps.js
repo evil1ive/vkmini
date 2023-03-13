@@ -25,8 +25,11 @@ const Gps = ({ id, go}) => {
             .then(response=>{return response.json()})
             .then(data =>{
                 console.log(data.response.GeoObjectCollection.featureMember[0].GeoObject);
+                changeUserAddres(data.response.GeoObjectCollection.featureMember[0].GeoObject.name)
+                global.userAddres = data.response.GeoObjectCollection.featureMember[0].GeoObject.name;
+                console.log(global.userAddres);
                 if(data.response.GeoObjectCollection.featureMember[0].GeoObject != undefined){
-                    setUserData(data.response.GeoObjectCollection.featureMember[0].GeoObject);
+                    setUserData(data.response.GeoObjectCollection.featureMember[0].GeoObject);    
                 }
             })
             .catch(error=>{
@@ -43,14 +46,13 @@ const Gps = ({ id, go}) => {
             left={<PanelHeaderBack onClick={() => {go("home")}} />}>
             НайдиШавуху
         </PanelHeader>
-		<Group header={<Header mode="secondary">Ваши местоположение?</Header>}>
-			<Div>
+		<Group >
+			<Div className="div1" style={{display:"flex",flexDirection:"column",alignItems:"center"}}>
                 <Title level='3'>Вы находитесь: {userData.name} {userData.description}</Title>
-                <Button size="l" mode="secondary" onClick={() => {
-                    go("byAddres") 
-                    changeUserAddres(userData.name)
-                    }} style={{ marginBottom: 16, width:"100%" }}>Да</Button>
-                <Button size="l" mode="secondary" onClick={() => go("addr")} style={{ marginBottom: 16, width:"100%" }}>Нет</Button>
+                <Button className="btn" size="l" mode="secondary" onClick={() => {
+                    go("byAddres");                    
+                    }} style={{ margin: "16px 16px" }}>Да</Button>
+                <Button className="btn" size="l" mode="secondary" onClick={() => go("addr")} style={{ marginBottom: 16}}>Нет</Button>
 			</Div>
 		</Group>
 	</Panel>

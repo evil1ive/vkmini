@@ -40,13 +40,13 @@ const App = () => {
 	};
 
 	return (
-		<ConfigProvider scheme={scheme}>
-			<AdaptivityProvider>
+		<ConfigProvider  scheme={scheme}>
+			<AdaptivityProvider >
 				<AppRoot>
 					<SplitLayout popout={popout}>
 						<SplitCol>
-							<View activePanel={activePanel}>
-								<Home id='home'  go={go} />
+							<View  activePanel={activePanel}>
+								<Home className="Home" id='home'  go={go} />
 								<Gps addres={global.userAddres} id='gps' go={go}></Gps>
 								<Addr id='addr' go={go}></Addr>
 								<Address addres={global.userAddres} id='byAddres' go={go}/>

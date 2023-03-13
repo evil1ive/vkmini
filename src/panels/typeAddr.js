@@ -17,9 +17,11 @@ const Addr = ({ id, go}) => {
             left={<PanelHeaderBack onClick={() => go("home")} />}>
             НайдиШавуху
         </PanelHeader>
-		<Group header={<Header mode="secondary">Определение по адресу</Header>}>
-            <FormLayout>
-                <FormItem top="Ваш адрес" >
+		<Group >
+        <Header mode="primary">Определение по адресу</Header>
+            <FormLayout className='div1 form'>
+                <FormItem top="" >
+                <Header style={{margin:"0 0 0 80px"}} mode="primary">Ваш адрес</Header>
                     <Input
                     before={undefined}
                     after={undefined}
@@ -30,11 +32,12 @@ const Addr = ({ id, go}) => {
                     onChange={(event) => {setInputOne(event.target.value)}}
                     />
                 </FormItem>
-            </FormLayout>
-            {/* Свердловский Проспект 41 */}
-            <Button stretched size="l" mode="secondary" onClick={() => go("byAddres")} style={{ marginBottom: 16, width:"100%" }}>
+                <Button className="btn" stretched size="l" mode="secondary" onClick={() => go("byAddres")} style={{ marginBottom: 16 }}>
 			    Подтвердить
 		    </Button>
+            </FormLayout>
+            {/* Свердловский Проспект 41 */}
+            
 		</Group>   
 	</Panel>
     )

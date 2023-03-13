@@ -1,3 +1,40 @@
 .none{
     display: none;
 }
+.div2{  
+    background:url("../img/gps.svg") no-repeat;
+    height:50px;
+    width:50px;
+    margin-left:140px;
+    padding:0;
+}
+.btn{
+    width: 300px;
+    height: 50px;
+    background-color: royalblue;
+    z-index: 100;
+    border-radius: 20px;
+    :nth-child(1){
+        color: white;
+    }
+}
+.div1{
+    height: 68vh;
+    width: 100%;
+    text-align: center;
+    
+}
+.form{
+    display:  flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 400px;
+}
+.group{
+    width: 100%;
+   
+    .vkuiGroup__inner{
+        padding-left: 32% !important;
+    }
+}

@@ -16,6 +16,7 @@ const MapYandex = (props) => {
           await fetch(`https://search-maps.yandex.ru/v1/?apikey=c92adce5-d74d-4080-ad6e-784664d8dab4&text=Шаурма, Челябинск&lang=ru_RU&type=biz&ll=${lat},${lon}&spn=0.01,0.01&results=25`)
             .then(response=> response.json())
             .then(data =>{
+                console.log(data.features);
                 for(let i=0;i< data.features.length;i++){
                     places[i]=data.features[i]
                 }           
@@ -34,17 +35,25 @@ const MapYandex = (props) => {
                 <Placemark
                     key={place.geometry.coordinates[0]+""+place.geometry.coordinates[1]}
                     geometry={[place.geometry.coordinates[1], place.geometry.coordinates[0]]}
-                    
+                    properties={{
+                        balloonContentBody:`Название: ${place.properties.name}, время работы: ${place.properties.CompanyMetaData.Hours.text}`,
+                        hintContent: `Название: ${place.properties.name}, время работы: ${place.properties.CompanyMetaData.Hours.text}`
+                      }}
                     options={{
                         iconLayout: "default#image",
                         iconImageSize: [50, 50],
-                        iconImageHref: placemarkIcon
+                        iconImageHref: placemarkIcon,                        
                     }}
-                    hintContent='Ну давай уже тащи'
+                    
                 />
             ))}
                 
                 <Placemark geometry={[props.altitude, props.longitude]}
+                modules={['geoObject.addon.balloon','geoObject.addon.hint']}
+                properties={{
+                    balloonContent:"Это ты, дружок!",
+                    hintContent: 'Это ты, дружок!'
+                  }}
                 options={{
                     iconLayout: "default#image",
                     iconImageSize: [50, 50],
